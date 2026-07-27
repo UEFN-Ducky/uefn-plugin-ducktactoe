@@ -1,0 +1,55 @@
+{
+  "id": "ducktactoe",
+  "kind": "plugin",
+  "version": "1.0.16",
+  "label": "Duck-Tac-Toe",
+  "description": "Play tic-tac-toe live with your Ducky \u2014 board lives inside the chat (collapsible aside) + Live voice, MCP tools, and a skill for real-time play.",
+  "min_app_version": "1.0.0",
+  "default_enabled": false,
+  "secret_keys": [],
+  "contributes": {
+    "ui.panels": [
+      {
+        "id": "board",
+        "title": "Duck-Tac-Toe",
+        "icon": "\ud83e\udd86",
+        "entry": "ui/index.html"
+      }
+    ],
+    "header.buttons": [
+      {
+        "id": "board",
+        "title": "Duck-Tac-Toe",
+        "icon": "\ud83e\udd86",
+        "action": "panel:board",
+        "order": 55
+      }
+    ],
+    "agent.tools": {
+      "category": "ducktactoe",
+      "intent_pattern": "\\b(tic.?tac.?toe|ducktactoe|duck.?tac.?toe|play|won|win|draw|rematch|your turn|my turn|board)\\b",
+      "plan_tools": [
+        "ducktactoe_state"
+      ]
+    },
+    "walkthrough": {
+      "id": "ducktactoe",
+      "title": "Duck-Tac-Toe ready",
+      "auto_start": "first_enable",
+      "settings_tab": "Store",
+      "steps": [
+        {
+          "target": "settings.store.root",
+          "title": "Duck-Tac-Toe ready",
+          "body": "Play tic-tac-toe with your Ducky \u2014 the board appears in chat. Ask to play Duck-Tac-Toe anytime.",
+          "advance": "next",
+          "mode": "rect"
+        }
+      ]
+    }
+  },
+  "backend": {
+    "entry": "backend",
+    "register": "register"
+  }
+}
