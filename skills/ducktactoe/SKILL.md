@@ -5,8 +5,8 @@ license: All Rights Reserved
 metadata:
   label: Duck-Tac-Toe
   version: 1
-  author: Iliya Kovachki
-  copyright: Copyright 2026 Iliya Kovachki
+  author: UEFN-Ducky
+  copyright: Copyright 2026 UEFN-Ducky
   allow_redistribute: false
   managed_by: uefn-ducky
   source_plugin_id: ducktactoe

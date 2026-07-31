@@ -122,7 +122,7 @@ def _save_state(state: dict[str, Any]) -> None:
 
 def _tool_json(payload: dict[str, Any], pretty: bool = False) -> str:
     try:
-        from backend.json_util import tool_json
+        from backend.util.json_util import tool_json
 
         return tool_json(payload, pretty=pretty)
     except Exception:
