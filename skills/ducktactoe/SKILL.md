@@ -1,13 +1,13 @@
 ---
 name: ducktactoe
 description: "Play Duck-Tac-Toe live against the user in the UEFN-Ducky chat board — start a game, wait for their click, place moves via MCP tools"
-license: All Rights Reserved
+license: MIT
 metadata:
   label: Duck-Tac-Toe
   version: 1
   author: UEFN-Ducky
-  copyright: Copyright 2026 UEFN-Ducky
-  allow_redistribute: false
+  copyright: Copyright 2026 Mindful Path Company, LLC
+  allow_redistribute: true
   managed_by: uefn-ducky
   source_plugin_id: ducktactoe
 ---
@@ -16,7 +16,7 @@ metadata:
 
 You and the human share a real board in the **Duck-Tac-Toe** chat (collapsible board aside). Your moves appear on their screen within ~300 ms. This is turn-based real-time: you wait for their click, then play.
 
-This branded chat is for the **game first**. Messages like "i won", "your turn", "rematch", or anything about the board mean Duck-Tac-Toe — **not** the UEFN island / roguelike / Verse project. Call `ducktactoe_state` before assuming anything else.
+This branded chat is for the **game first**. Messages like "i won", "your turn", "rematch", or anything about the board mean Duck-Tac-Toe — **not** the UEFN island / Verse project. Call `ducktactoe_state` before assuming anything else.
 
 They can turn on **Live** voice in this chat. **New game** on the board resets the cache and pings you. Winning and drawing clicks also ping you.
 
@@ -47,7 +47,7 @@ If `timed_out` is true, ask the human to click (or say if they want to stop) and
 
 ## Ambiguous chat ("i won", "nice", "again", …)
 
-**First tool:** `ducktactoe_state` (no wait). React to that board. Do **not** grep Verse, search the project, or invent a roguelike / dungeon victory.
+**First tool:** `ducktactoe_state` (no wait). React to that board. Do **not** grep Verse, search the project, or invent an unrelated island victory.
 
 Only leave the game and touch UEFN/Verse when the human clearly asks for project work (e.g. "fix the spawner", "open random_room_system.verse").
 
