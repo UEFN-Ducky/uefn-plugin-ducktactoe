@@ -1,10 +1,10 @@
 {
   "id": "ducktactoe",
   "kind": "plugin",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "label": "Duck-Tac-Toe",
   "description": "Play tic-tac-toe live with your Ducky \u2014 board lives inside the chat (collapsible aside) + Live voice, MCP tools, and a skill for real-time play.",
-  "min_app_version": "1.0.0",
+  "min_app_version": "1.2.357",
   "default_enabled": false,
   "data_sharing": false,
   "secret_keys": [],
