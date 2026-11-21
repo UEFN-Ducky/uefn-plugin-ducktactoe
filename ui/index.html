@@ -314,7 +314,16 @@ async function poll() {
     state = newState();
   }
   render();
-  setInterval(() => void poll(), 300);
+  // The tab stays loaded while another one is in front (Ducky sends panel.visibility): poll only
+  // while it is shown. Hidden, it asked Ducky for the board 200 times a minute.
+  let pollTimer = setInterval(() => void poll(), 300);
+  window.addEventListener("message", (ev) => {
+    const e = ev.data && ev.data.channel === CHANNEL ? ev.data.event : null;
+    if (!e || e.type !== "panel.visibility") return;
+    clearInterval(pollTimer);
+    pollTimer = e.visible ? setInterval(() => void poll(), 300) : 0;
+    if (e.visible) void poll();
+  });
 })();
 </script>
 </body>
